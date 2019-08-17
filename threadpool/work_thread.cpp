@@ -48,7 +48,6 @@ void WorkThread::Run(){
 			mThreadManager->OnIdle( GetId() );
 		}
 	}
-	delete this;
 }
 
 

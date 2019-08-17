@@ -51,6 +51,7 @@ void ThreadManager::OnIdle( pthread_t id ){
 	ScopeLock guard(mMutex);
 	for ( std::list<WorkThread*>::iterator it = mDeadThreads.begin(); it != mDeadThreads.end(); ++it ){
 		(*it)->Stop();
+		delete *it;
 	}
 	mDeadThreads.clear();
 
